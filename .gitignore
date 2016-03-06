@@ -26,3 +26,6 @@
 *.exe
 *.out
 *.app
+
+# User defined
+*.VC.opendb
