@@ -1,0 +1,37 @@
+  0         1         2         
+  012345678901234567890123456789
+00|hhhhhhhhhhhhhhhhhhhhhhhhhhhh|
+01|hhhhhhhhhhhhhhhhhhhhhhhhhhhh|
+02|hhhhhhhhhhhhhhhhhhhhhhhhhhhh|
+03|hhhhhhhhhhhhhhhhhhhhhhhhhhhh|
+04|hhhhhhhhhhhhhhhhhhhhhhhhhhhh|
+05|-----------     ------------|  
+06kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+07kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+08kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+09kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+10kkkkkkkkk|--   --|kkkkkkkkkkkk
+11kkkkkkkkk|       |kkkkkkkkkkkk
+12kkkkkkkkk|       |kkkkkkkkkkkk
+13kkkkkkkkk|       |kkkkkkkkkkkk
+14kkkkkkkkk|--   --|kkkkkkkkkkkk
+15kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+16kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+17kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+18kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+19kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+20kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+21kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+22kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+23|-----------     ------------|
+24|                            |
+25|                            |
+26|                            |
+27|                            |
+28|                            |
+29|                            |
+
+keterangan:
+1. Dunia adalah matriks 30x30.
+2. h adalah tempat spawn herbivora, dan k adalah tempat spawn karnivora.
+3. pengaksesan matriks adalah [koordinat x][koordinat y], bukan [baris][kolom]
