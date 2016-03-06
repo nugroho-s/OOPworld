@@ -35,6 +35,13 @@ int main() {
 		}
 		if (GetAsyncKeyState(VK_ESCAPE))
 			break;
+		if (GetAsyncKeyState(VK_SPACE)) {
+			Sleep(200);
+			while (true) {
+				if (GetAsyncKeyState(VK_SPACE))
+					break;
+			}
+		}
 		Sleep(100);
 	}
 	for (auto& x : LOM) {
