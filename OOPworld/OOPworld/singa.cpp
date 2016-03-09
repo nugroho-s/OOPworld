@@ -1,12 +1,12 @@
 #include "singa.h"
 
-singa::singa() {
-	// constructor makhluk dijalankan terlebih dahulu 
+singa::singa(int ID, char** bid, Point& p1, Point& p2, Point& p3, Point& p4) : karnivora(ID, bid, p1, p2, p3, p4) {
+	// constructor 
 	mlapar = maxlapar;
-	power = 3;
+	power = 5;
 	dt = 2;
-	umur = 30;
-	id = 's';
+	arah = 0;
+	mengejar = 0;
 }
 
 singa::singa(singa& s) {
@@ -15,7 +15,7 @@ singa::singa(singa& s) {
 	power = s.power;
 	dt = s.dt;
 	arah = s.arah;
-	umur = s.umur;
+	mengejar = s.mengejar;
 	P.set(s.getlok().getX(), s.getlok().getY());
 }
 
@@ -28,7 +28,7 @@ singa& singa::operator= (singa& s) {
 		power = s.power;
 		dt = s.dt;
 		arah = s.arah;
-		umur = s.umur;
+		mengejar = s.mengejar;
 		P.set(s.getlok().getX(), s.getlok().getY());
 		return *this;
 	}
@@ -36,7 +36,7 @@ singa& singa::operator= (singa& s) {
 
 singa::~singa() {
 	// destruktor
-	cout << "destructor singa" << endl;
+	std::cout << "destructor singa" << std::endl;
 }
 
 void singa::makan() {
@@ -44,3 +44,7 @@ void singa::makan() {
 	mlapar = maxlapar;
 }
 
+void singa::makepath() { 
+
+}
+	
