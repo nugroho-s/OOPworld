@@ -1,46 +1,50 @@
-#pragma once
-
 #include "Point.h"
 #include "stdafx.h" 
 
-//! Abstract Class - tidak bisa dibuat objeknya
+// Abstract Class - tidak bisa dibuat objeknya
+#ifndef makhluk_h
+#define makhluk_h
+
 class makhluk {
 public:
-	//! konstruktor
+	// konstruktor
 	makhluk();
+	makhluk(int ID, char**, char jenis_obj, Point min_h_v, Point max_h_v, Point min_h_h, Point max_h_h);
 
-	//! destruktor 
+	// destruktor 
 	virtual ~makhluk();
-
-	//! objek turunan makhluk berpindah ke koordinat lain 
+	
+	// METHOD
+	//---objek turunan makhluk berpindah ke koordinat lain 
 	virtual void bergerak();
-
-	//! memakan objek lain - kelas turunannya harus mengimplementasikan ini 
+	//---memakan objek lain - kelas turunannya harus mengimplementasikan ini 
 	virtual void makan() = 0;
-
+	//---membuat path ke target
+	virtual void makepath() = 0;
+	
 	//
 	// GETTER 
 	//
 
-	//! mendapatkan level kelaparan sebuah objek turunan makhluk 
+	// mendapatkan level kelaparan sebuah objek turunan makhluk 
 	virtual int getlapar() = 0;
-	//! mendapatkan lokasi (x, y) sebuah objek turunan makhluk di bidang 
 	Point getlok();
-
-	//! menampilkan lokasi (x, y) sebuah objek turunan makhluk di bidang 
+	int getid();
+	int getdt();
+	int getpower();
+	int getarah();
+	
+	// menampilkan lokasi (x, y) sebuah objek turunan makhluk di bidang 
 	void printlok();
-
-	//! menampilkan semua status makhluk
+	// menampilkan semua status makhluk
 	virtual void printstatmakhluk();
 
-	virtual char getid();
-	//! mengirimkan id
-
 protected:
-	char id;
-	int dt;		//! selang waktu gerak sebuah objek turunan makhluk 
-	int umur;	//
-	int power;	//! kekuatan sebuah objek turunan makhluk 
-	int arah;	//! arah gerak sebuah objek turunan makhluk 
-	Point P;	//! koordinat sebuah objek turunan makhluk di bidang 
+	int id;		// id objek turunan makhluk hidup (unik)
+	int dt;		// selang waktu gerak sebuah objek turunan makhluk 
+	int power;	// kekuatan sebuah objek turunan makhluk (berguna saat sebuah sel board ditempati lebih dari 1 makhluk) 
+	int arah;	// arah gerak sebuah objek turunan makhluk 
+	Point P;	// koordinat sebuah objek turunan makhluk di bidang 
 };
+
+#endif 
