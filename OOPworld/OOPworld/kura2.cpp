@@ -4,7 +4,6 @@ kura2::kura2(){
 	mlapar = maxlapar;
 	power = 3;
 	dt = 2;
-	umur = 30;
 	id = 'u';
 }
 	

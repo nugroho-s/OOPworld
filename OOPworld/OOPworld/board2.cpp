@@ -1,4 +1,6 @@
-#include "board.h"
+#include "board2.h"
+#include <fstream>
+#include <sstream>
 
 int sizex;
 int sizey;
@@ -11,6 +13,8 @@ char** isi;
 Point pintu_u;	// pintu benteng utara 
 Point pintu_s;	// pintu benteng selatan 
 Point* pintu_p;	// pintu benteng perlindungan 
+
+using namespace std;
 
 void board() {
 	
@@ -43,7 +47,7 @@ void board() {
 	string line;
 	string token;
 	if (myfile.is_open()) {
-		getline(myfile, line);
+		getline(myfile,line);
 		stringstream lineStream(line);
 		
 		while (lineStream >> token) {

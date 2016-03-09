@@ -1,9 +1,15 @@
 #include "zebra.h"
 #include "singa.h"
-#include "board.h"
+#include "board2.h"
 //#include "list.h"
 #include <mutex>
+#ifdef WIN32
+#include <io.h>
+#elif WIN64
+#include <io.h>
+#elif UNIX
 #include <unistd.h>
+#endif
 #include <fstream>
 
 mutex mu;
@@ -49,7 +55,7 @@ int main() {
 	// misalkan ada 2 objek makhluk hidup 
 	string jenisherbivora = "zebra", jeniskarnivora = "singa";
 	int bnykobj = 2;
-	makhluk* mptr[bnykobj];
+	makhluk* mptr[2];
 	for (int i = 0; i < bnykobj; i++) {
 		if (jenisherbivora == "zebra") {
 			mptr[i] = new zebra(0, isi, min_h_vertical, max_h_vertical, min_h_horizontal, max_h_horizontal);
