@@ -12,7 +12,7 @@ public:
 	//!memakan objek lain 
 	void makan();
 	
-	//!bersembunyi di cangkang utk kasus kura2
+	//!bersembunyi di benteng kecil
 	void sembunyi();
 	
 	//!berpindah ke koordinat lain 
