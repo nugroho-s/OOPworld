@@ -1,0 +1,11 @@
+sebenarnya error redefinition sudah dihindari dengan "#pragma once",
+tetapi "#pragma once" kadang tidak support di beberapa compiler.
+Jika compiler tidak support, ganti "#pragma once" dengan
+#ifndef HEADER_H
+#define HEADER_H
+
+//contents of header
+
+#endif
+
+seperti pada praktikum alstrukdat.

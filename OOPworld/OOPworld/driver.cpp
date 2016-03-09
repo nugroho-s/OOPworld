@@ -1,11 +1,8 @@
 #include "makhluk.h"
-#include "singa.h"
 #include "karnivora.h"
-#include "zebra.h"
 #include <iostream>
 #include "board.h"
-#include "kelinci.h"
-#include "kura2.h"
+#include "allmakhluk.h"
 
 void test() {
 	cout << "test guarded_thread" << endl;
