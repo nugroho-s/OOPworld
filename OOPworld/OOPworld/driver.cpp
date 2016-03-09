@@ -5,6 +5,7 @@
 #include <iostream>
 #include "board.h"
 #include "kelinci.h"
+#include "kura2.h"
 
 void test() {
 	cout << "test guarded_thread" << endl;
@@ -21,7 +22,7 @@ int main() {
 	while (true) {
 		if (GetAsyncKeyState(VK_UP))
 		{
-			makhluk = rand() % 3;
+			makhluk = rand() % 4;
 			if (makhluk == 0) {
 				//jika nol buat singa
 				cout << "alokasi singa" << endl;
@@ -32,10 +33,15 @@ int main() {
 				cout << "alokasi zebra" << endl;
 				temp = new zebra;
 			}
-			else {
+			else if (makhluk == 2){
 				//jika 2, buat kelinci
 				cout << "alokasi kelinci" << endl;
 				temp = new kelinci;
+			}
+			else {
+				//jika 3, buat kura2
+				cout << "alokasi kura-kura" << endl;
+				temp = new kura2;
 			}
 			LOM.emplace_back(temp);
 			b.tambah(*temp);
