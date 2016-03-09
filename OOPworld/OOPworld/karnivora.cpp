@@ -4,9 +4,9 @@ karnivora::karnivora() {
 	mlapar = 10;
 }
 
-/*karnivora::~karnivora() {
-
-}*/
+karnivora::~karnivora() {
+	//do nothing
+}
 
 void karnivora::lihat() {
 	dt += 1;

@@ -1,3 +1,4 @@
+#pragma once
 #include "makhluk.h"
 #include "herbivora.h"
 
@@ -20,4 +21,4 @@ public:
 	
 private:
 	const int maxlapar = 30;
-}
+};

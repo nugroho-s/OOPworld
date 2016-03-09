@@ -1,11 +1,10 @@
 #include "singa.h"
 
 singa::singa() {
-	// constructor 
+	// constructor makhluk dijalankan terlebih dahulu 
 	mlapar = maxlapar;
 	power = 3;
 	dt = 2;
-	arah = 0;
 	umur = 30;
 	id = 's';
 }

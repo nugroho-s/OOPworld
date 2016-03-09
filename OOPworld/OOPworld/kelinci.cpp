@@ -1,12 +1,12 @@
 #include "kelinci.h"
 
 kelinci::kelinci(){
+	// constructor makhluk dijalankan terlebih dahulu 
 	mlapar = maxlapar;
 	power = 3;
 	dt = 2;
-	arah = 0;
 	umur = 30;
-	id = 'u';
+	id = 'k';
 }
 	
 kelinci::~kelinci(){}
