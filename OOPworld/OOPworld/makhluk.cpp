@@ -7,18 +7,32 @@
 #include "makhluk.h"
 
 makhluk::makhluk() {
+	// default constructor 
+}
+
+makhluk::makhluk(int ID, char** bid, char jenis_obj, Point min_h_v, Point max_h_v, Point min_h_h, Point max_h_h) {
 	// konstruktor
-	// inisialisasi nilai koordinat awal objek (x, y) dengan nilai random 
-	int x = rand() % 30;
-	int y = rand() % 30;
+	// inisiasi nilai koordinat awal objek (x, y) dengan nilai random 
+	int found = 0, x, y;
+	while (found == 0) {
+		// random nilai (x,y) dan cek apakah lokasi objek sudah tepat di spawn nya  
+		x = rand() % (max_h_v.getX()+1-min_h_v.getX()) + min_h_v.getX(); 
+		y = rand() % (max_h_h.getY()+1-min_h_h.getY()) + min_h_h.getY();
+		if (bid[x][y] == jenis_obj) {
+			found = 1;
+		}
+	}
 	P.set(x, y);
-	// inisialisasi nilai arah gerak awal objek dengan nilai random (0 - 7)
+	
+	// inisiasi atribut id 
+	id = ID;
+	// inisiasi nilai arah gerak awal objek dengan nilai random (0 - 7)
 	arah = rand() % 8;
 }
 
 makhluk::~makhluk() {
 	// destruktor
-	cout << "destructor makhluk" << endl;
+	std::cout << "destructor makhluk" << std::endl;
 }
 
 void makhluk::bergerak() {
@@ -62,14 +76,23 @@ Point makhluk::getlok() {
 	return P; 
 }
 
+int makhluk::getid() {
+	return id;
+}
+int makhluk::getdt() {
+	return dt;
+}
+int makhluk::getpower() {
+	return power;
+}
+int makhluk::getarah() {
+	return arah;
+}
+
 void makhluk::printlok() {
 	printf("lokasi = (%d,%d)\n", P.getX(), P.getY());
 }
 
 void makhluk::printstatmakhluk() {
 	makhluk::printlok();
-}
-
-char makhluk::getid() {
-	return id;
 }
