@@ -6,20 +6,18 @@
 class karnivora : public makhluk {
 public:
 	karnivora();
-	//! konstruktor
-	virtual ~karnivora();
-	//! destruktor
+	karnivora(int ID, char**, Point&, Point&, Point&, Point&);
+	~karnivora();
+	int getmengejar();
 	virtual void makan() = 0;
-	//! mengisi mlapar
+	virtual void makepath() = 0;
 	void lihat();
-	//! jika melihat mangsa, akan menambah kecepatan
 	void bergerak();
-	//! berpindah tempat
 	int getlapar();
-	//! mengembalikan mlapar
 	void printstatmakhluk();
-	//! print status makhluk karnivora
 protected:
 	int mlapar;
 	int jenismakanan;
+	int mengejar;		// return 1 jika sedang mengejar herbivora
+	Point target;		// lokasi target yang dituju 
 };
