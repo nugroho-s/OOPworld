@@ -13,6 +13,7 @@ void test() {
 using namespace std;
 
 int main() {
+	srand(time(NULL));
 	list<makhluk*> LOM; //list berisi pointer makhluk
 	board b;
 	makhluk* temp;
