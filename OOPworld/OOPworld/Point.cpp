@@ -1,4 +1,5 @@
 #include "Point.h"
+#include <cstdio>
 
 Point::Point() { 
 	// inisialisasi koordinat awal objek di (0, 0)
@@ -14,7 +15,7 @@ Point::Point (int _X, int _Y) {
 
 // mendapatkan koordinat absis (x) dan ordinat (y) objek di bidang
 int Point::getX () { return x;}
-int Point::getY () { return y;}
+int Point::getY() { printf("%d\n",&y); return y; }
 
 // mengubah posisi (x, y) objek di bidang menjadi _x dan _y 
 void Point::set(int _x, int _y) {

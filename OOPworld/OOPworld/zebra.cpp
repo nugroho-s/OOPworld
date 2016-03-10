@@ -55,13 +55,13 @@ void zebra::makepath() {
 	// membuat path ke pintu_s dan menyimpannya ke dalam list of path (LOP)
 	
 	// inisiasi status setiap sel board = 0 (belum pernah dialokasikan sebagai node pada tree)
-	stat = new int*[sizey];
+	status = new int*[sizey];
 	for(int i = 0; i < sizey; ++i) {
-		stat[i] = new int[sizex];
+		status[i] = new int[sizex];
 	}
 	for (int i = 0; i < sizey; i++) {
 		for (int j = 0; j < sizex; j++) {
-			stat[i][j] = 0;
+			status[i][j] = 0;
 		}
 	}
 	

@@ -12,7 +12,6 @@
 #endif
 #include <fstream>
 
-Point pintu_u; Point pintu_s;
 mutex mu;
 
 void test() {
@@ -96,11 +95,10 @@ int main() {
 	deallocate_board();
 	
 	// dealokasi array yg ada di zebra 
-	/*for (int i = 0; i < sizey; i++) {
-        delete[] stat[i];
+	for (int i = 0; i < sizey; i++) {
+        delete[] status[i];
     }
-    delete[] stat;*/
-	delete stat;
+    delete[] status;
 	return 0;
 
 }

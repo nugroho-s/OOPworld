@@ -4,7 +4,7 @@
 #ifndef paththree_h
 #define paththree_h 
 
-extern int** stat;
+extern int** status;
 	//menyimpan nilai 1 atau 0 yang menyatakan apakah sebuah point di board sudah pernah 
 	//dialokasikan sebagai node pada tree 
 extern Point* ptree;

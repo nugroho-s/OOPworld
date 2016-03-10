@@ -1,11 +1,9 @@
 #include "pathtree.h"
 
-extern int** stat;
+int** status;
 Point* ptree;
 int found_target = -1;
 Node* proot;
-extern Point pintu_s;
-extern Point pintu_u;
 
 bool isOneElmt(Node* par) {
 	if (Timur(par) == NULL && Tenggara(par) == NULL && Selatan(par) == NULL && BaratDaya(par) == NULL && Barat(par) == NULL && BaratLaut(par) == NULL && Utara(par) == NULL && TimurLaut(par) == NULL) {
@@ -16,7 +14,7 @@ bool isOneElmt(Node* par) {
 }
 
 bool isnotinptree(int _posx, int _posy) {
-	if (stat[_posy][_posx] == 0) { //belum pnya child 
+	if (status[_posy][_posx] == 0) { //belum pnya child 
 		return true;
 	} else {
 		return false;
@@ -32,8 +30,12 @@ Node* SearchNode(Node* par, Point& pp) {
 	Node* cek_baratlaut = NULL;
 	Node* cek_utara = NULL;
 	Node* cek_timurlaut = NULL;
+
+	if (par == NULL) {
+
+	}
 	
-	if (isOneElmt(par)) {
+	else if (isOneElmt(par)) {
 		if (Akar(par).getX() == pp.getX() && Akar(par).getY() == pp.getY()) {
 			//node berhasil ditemukan di address par 
 			//std::cout << "Node found" << std::endl;
@@ -255,7 +257,7 @@ Node* Tree(int idx_ptree, int* passhead, int* passtail) {
 		}
 		
 		Akar(pparent).set(pos_x, pos_y);
-		stat[pos_y][pos_x] = 1;		// sudah pnya child 
+		status[pos_y][pos_x] = 1;		// sudah pnya child 
 		
 		//menghubungkan parent node dengan child node untuk membentuk sebuah PathTree 
 		Timur(pparent) = ptimur;

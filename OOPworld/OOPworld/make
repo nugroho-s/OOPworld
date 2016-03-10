@@ -1,0 +1,1 @@
+g++ -std=c++11 -o main board2.cpp driver2.cpp herbivora.cpp karnivora.cpp list.cpp makhluk.cpp pathtree.cpp Point.cpp singa.cpp zebra.cpp
