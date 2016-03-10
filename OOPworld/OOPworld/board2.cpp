@@ -1,6 +1,5 @@
 #include "board2.h"
-#include <fstream>
-#include <sstream>
+#include <string>
 
 int sizex;
 int sizey;
