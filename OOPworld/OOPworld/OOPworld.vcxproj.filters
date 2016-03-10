@@ -57,6 +57,12 @@
     <ClCompile Include="driver2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="elang.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ular.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="board.h">
@@ -102,6 +108,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="pathtree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="elang.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ular.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

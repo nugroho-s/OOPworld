@@ -1,9 +1,11 @@
 #include "pathtree.h"
 
-int** stat;
+extern int** stat;
 Point* ptree;
 int found_target = -1;
 Node* proot;
+extern Point pintu_s;
+extern Point pintu_u;
 
 bool isOneElmt(Node* par) {
 	if (Timur(par) == NULL && Tenggara(par) == NULL && Selatan(par) == NULL && BaratDaya(par) == NULL && Barat(par) == NULL && BaratLaut(par) == NULL && Utara(par) == NULL && TimurLaut(par) == NULL) {

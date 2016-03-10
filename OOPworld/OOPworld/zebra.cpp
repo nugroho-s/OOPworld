@@ -1,4 +1,5 @@
 #include "zebra.h"
+#include "board2.h"
 
 Point** prevs;
 

@@ -149,6 +149,7 @@
     <ClCompile Include="board.cpp" />
     <ClCompile Include="board2.cpp" />
     <ClCompile Include="driver2.cpp" />
+    <ClCompile Include="elang.cpp" />
     <ClCompile Include="herbivora.cpp" />
     <ClCompile Include="karnivora.cpp" />
     <ClCompile Include="kelinci.cpp" />
@@ -159,12 +160,14 @@
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="singa.cpp" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="ular.cpp" />
     <ClCompile Include="zebra.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="allmakhluk.h" />
     <ClInclude Include="board.h" />
     <ClInclude Include="board2.h" />
+    <ClInclude Include="elang.h" />
     <ClInclude Include="guarded_thread.h" />
     <ClInclude Include="herbivora.h" />
     <ClInclude Include="karnivora.h" />
@@ -176,6 +179,7 @@
     <ClInclude Include="Point.h" />
     <ClInclude Include="singa.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="ular.h" />
     <ClInclude Include="zebra.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

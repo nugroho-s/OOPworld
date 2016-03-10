@@ -1,4 +1,4 @@
-#include "board.h"
+#include "board2.h"
 #include "Point.h"
 
 #ifndef paththree_h

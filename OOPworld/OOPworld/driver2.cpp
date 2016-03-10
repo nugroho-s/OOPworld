@@ -12,6 +12,7 @@
 #endif
 #include <fstream>
 
+Point pintu_u; Point pintu_s;
 mutex mu;
 
 void test() {
@@ -20,7 +21,6 @@ void test() {
 
 
 int main() {
-	
 	int dunia_on = 1;
 	// menciptakan board 
 	board();
@@ -96,11 +96,11 @@ int main() {
 	deallocate_board();
 	
 	// dealokasi array yg ada di zebra 
-	for (int i = 0; i < sizey; i++) {
+	/*for (int i = 0; i < sizey; i++) {
         delete[] stat[i];
     }
-    delete[] stat;
-	
+    delete[] stat;*/
+	delete stat;
 	return 0;
 
 }

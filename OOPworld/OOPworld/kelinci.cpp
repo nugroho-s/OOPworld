@@ -5,7 +5,6 @@ kelinci::kelinci(){
 	mlapar = maxlapar;
 	power = 3;
 	dt = 2;
-	umur = 30;
 	id = 'k';
 }
 	
