@@ -6,7 +6,7 @@ class singa : public karnivora {
 public:
 	// constructor
 	singa();
-	singa(int ID, char**, Point&, Point&, Point&, Point&);
+	singa(Point&, Point&, Point&, Point&);
 	
 	// copy constructor 
 	singa(singa&);
@@ -19,7 +19,7 @@ public:
 	
 	// method
 	virtual void makan();
-	virtual void makepath();
+	virtual void makepath(Point&);
 	
 protected:
 	const int maxlapar = 30;
