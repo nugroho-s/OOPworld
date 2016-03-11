@@ -18,23 +18,23 @@ class zebra : public herbivora {
 public:
 	// constructor
 	zebra();
-	zebra(int ID, char**, Point&, Point&, Point&, Point&);
-
+	zebra(Point&, Point&, Point&, Point&);
+	
 	// copy constructor
 	zebra(zebra&);
-
+	
 	// operator= 
 	zebra& operator= (zebra&);
-
+	
 	// destruktor
 	virtual ~zebra();
-
+	
 	// memakan objek lain. level kelaparannya menjadi maxlapar (sangat kenyang) 
 	virtual void makan();
-
+	
 	// membuat path ke target
-	virtual void makepath();
-
+	virtual void makepath(Point&);
+	
 protected:
 	// level kelaparan sebuah objek zebra 
 	// maxlapar = 30 berarti objek sangat kenyang 
@@ -44,5 +44,5 @@ protected:
 
 	// list dengan elemen Point (x,y) yang menyatakan sel-sel mana saja 
 	// yang termasuk ke dalam path si zebra menuju posisi target 
-	list LOP;
+	list LOP;	
 };
