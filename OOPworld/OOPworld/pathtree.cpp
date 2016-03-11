@@ -1,6 +1,6 @@
 #include "pathtree.h"
 
-int** status;
+int** stat;
 Point* ptree;
 int found_target = -1;
 Node* proot;
@@ -14,7 +14,7 @@ bool isOneElmt(Node* par) {
 }
 
 bool isnotinptree(int _posx, int _posy) {
-	if (status[_posy][_posx] == 0) { //belum pnya child 
+	if (stat[_posy][_posx] == 0) { //belum pnya child 
 		return true;
 	} else {
 		return false;
@@ -30,12 +30,8 @@ Node* SearchNode(Node* par, Point& pp) {
 	Node* cek_baratlaut = NULL;
 	Node* cek_utara = NULL;
 	Node* cek_timurlaut = NULL;
-
-	if (par == NULL) {
-
-	}
 	
-	else if (isOneElmt(par)) {
+	if (isOneElmt(par)) {
 		if (Akar(par).getX() == pp.getX() && Akar(par).getY() == pp.getY()) {
 			//node berhasil ditemukan di address par 
 			//std::cout << "Node found" << std::endl;
@@ -257,7 +253,7 @@ Node* Tree(int idx_ptree, int* passhead, int* passtail) {
 		}
 		
 		Akar(pparent).set(pos_x, pos_y);
-		status[pos_y][pos_x] = 1;		// sudah pnya child 
+		stat[pos_y][pos_x] = 1;		// sudah pnya child 
 		
 		//menghubungkan parent node dengan child node untuk membentuk sebuah PathTree 
 		Timur(pparent) = ptimur;
@@ -321,7 +317,7 @@ Node* Tree(int idx_ptree, int* passhead, int* passtail) {
 	return pparent;
 }
 
-void MakeTree(int idx_call, int _head, int _tail) {
+void MakeTree(int idx_call, int _head, int _tail, Point& _target) {
 	/*
 		contoh simulasi pengisian sebuah ptree:
 		awalnya ptree diisi dengan posisi awal objek di board (x0,y0);
@@ -347,7 +343,8 @@ void MakeTree(int idx_call, int _head, int _tail) {
 	*/
 	
 	Node* PP;
-	int head, tail, passhead, passtail, counter;
+	int head, tail;
+	int passhead, passtail, counter;
 	
 	std::cout << "MakeTree " << idx_call << " " << _head << " " << _tail << std::endl;
 	
@@ -367,7 +364,7 @@ void MakeTree(int idx_call, int _head, int _tail) {
 	
 	//cek apakah di ptree sudah terdapat node target 
 	for (int i = counter; i <= tail; i++) {
-		if (ptree[i].getX() == pintu_s.getX() && ptree[i].getY() == pintu_s.getY()) {
+		if (ptree[i].getX() == _target.getX() && ptree[i].getY() == _target.getY()) {
 			found_target = i;
 			std::cout << "found target at " << ptree[i].getX() << ", " << ptree[i].getY() << std::endl;
 			getchar();
@@ -387,7 +384,7 @@ void MakeTree(int idx_call, int _head, int _tail) {
 			}
 			
 			//sampai sini ptree menyimpan banyak child node dari node PP 
-			MakeTree(0, passhead, passtail);
+			MakeTree(0, passhead, passtail, _target);
 			if (found_target == -1) {
 				counter++;
 			} else {
