@@ -9,7 +9,7 @@ class makhluk {
 public:
 	// konstruktor
 	makhluk();
-	makhluk(int ID, char**, char jenis_obj, Point min_h_v, Point max_h_v, Point min_h_h, Point max_h_h);
+	makhluk(char**, char jenis_obj, Point min_h_v, Point max_h_v, Point min_h_h, Point max_h_h);
 
 	// destruktor 
 	virtual ~makhluk();
@@ -20,7 +20,7 @@ public:
 	//---memakan objek lain - kelas turunannya harus mengimplementasikan ini 
 	virtual void makan() = 0;
 	//---membuat path ke target
-	virtual void makepath() = 0;
+	virtual void makepath(Point&) = 0;
 	
 	//
 	// GETTER 
@@ -29,6 +29,7 @@ public:
 	// mendapatkan level kelaparan sebuah objek turunan makhluk 
 	virtual int getlapar() = 0;
 	Point getlok();
+	Point gettarget();
 	int getid();
 	int getdt();
 	int getpower();
@@ -40,11 +41,12 @@ public:
 	virtual void printstatmakhluk();
 
 protected:
-	int id;		// id objek turunan makhluk hidup (unik)
+	char id;	// id objek turunan makhluk hidup (h = herbivora atau k = karnivora)
 	int dt;		// selang waktu gerak sebuah objek turunan makhluk 
 	int power;	// kekuatan sebuah objek turunan makhluk (berguna saat sebuah sel board ditempati lebih dari 1 makhluk) 
 	int arah;	// arah gerak sebuah objek turunan makhluk 
 	Point P;	// koordinat sebuah objek turunan makhluk di bidang 
+	Point target;		// lokasi target yang dituju 
 };
 
 #endif 
