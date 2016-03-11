@@ -1,12 +1,13 @@
 #include "singa.h"
 
-singa::singa(int ID, char** bid, Point& p1, Point& p2, Point& p3, Point& p4) : karnivora(ID, bid, p1, p2, p3, p4) {
+singa::singa(Point& p1, Point& p2, Point& p3, Point& p4) : karnivora(p1, p2, p3, p4) {
 	// constructor 
 	mlapar = maxlapar;
 	power = 5;
 	dt = 2;
 	arah = 0;
-	mengejar = 0;
+	mengejar = NULL;		// belum ada objek yang sedang dikejar
+	target.set(-1, -1);	
 }
 
 singa::singa(singa& s) {
@@ -44,7 +45,7 @@ void singa::makan() {
 	mlapar = maxlapar;
 }
 
-void singa::makepath() { 
+void singa::makepath(Point& _target) { 
 
 }
 	
