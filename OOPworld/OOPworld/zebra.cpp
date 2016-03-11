@@ -1,15 +1,14 @@
 #include "zebra.h"
-#include "board2.h"
 
 Point** prevs;
 
-zebra::zebra(int ID, char** bid, Point& p1, Point& p2, Point& p3, Point& p4) : herbivora(ID, bid, p1, p2, p3, p4) {
+zebra::zebra(Point& p1, Point& p2, Point& p3, Point& p4) : herbivora(p1, p2, p3, p4) {
 	// constructor
 	mlapar = maxlapar;
-	power = 3;
+	power = 1;
 	dt = 2;
 	arah = 0;
-	dikejar = 0;
+	dikejar = NULL;		// belum ada objek yang mengejar
 	target.set(pintu_s.getX(), pintu_s.getY());
 	// inisiasi list of path kosong
 	LOP.headp = NULL;
@@ -51,17 +50,17 @@ void zebra::makan() {
 	mlapar = maxlapar;
 }
 
-void zebra::makepath() { 
+void zebra::makepath(Point& _target) { 
 	// membuat path ke pintu_s dan menyimpannya ke dalam list of path (LOP)
 	
 	// inisiasi status setiap sel board = 0 (belum pernah dialokasikan sebagai node pada tree)
-	status = new int*[sizey];
+	stat = new int*[sizey];
 	for(int i = 0; i < sizey; ++i) {
-		status[i] = new int[sizex];
+		stat[i] = new int[sizex];
 	}
 	for (int i = 0; i < sizey; i++) {
 		for (int j = 0; j < sizex; j++) {
-			status[i][j] = 0;
+			stat[i][j] = 0;
 		}
 	}
 	
@@ -79,7 +78,7 @@ void zebra::makepath() {
 	//memasukkan posisi awal sebuah zebra di board (yang nilainya random) ke dalam ptree sebagai elemen ke-0
 	ptree[0].set(P.getX(), P.getY());
 	//argumen ke-1 bernilai 1 berarti melakukan pemanggilaan prosedur MakeTree pertama kali 
-	MakeTree(1, 0, 0);
+	MakeTree(1, 0, 0, target);
 	
 	std::cout << "PATH ZEBRA KE TUJUAN" << std::endl;
 	
@@ -98,7 +97,7 @@ void zebra::makepath() {
 		curr = Parent(curr);
 	}
 	
-	//dealokasi ptree dan node teratas dari PathTree
+	//dealokasi 
 	delete[] ptree;
 	delete proot;
 	delete curr;
