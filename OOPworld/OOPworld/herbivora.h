@@ -1,4 +1,5 @@
 #include "makhluk.h"
+#include "board2.h"
 
 // file: herbivora.h 
 // class herbivora mewarisi sifat dari makhluk 
@@ -14,21 +15,19 @@ class herbivora: public makhluk {
 public:
 	// konstruktor
 	herbivora();
-	herbivora(int ID, char**, Point&, Point&, Point&, Point&);
+	herbivora(Point&, Point&, Point&, Point&);
 	
 	// destruktor
 	virtual ~herbivora();
 	
-	int getdikejar();
+	// mendapatkan objek yang mengejar 
+	makhluk* getdikejar();
 	
 	// memakan objek lain - kelas turunannya harus mengimplementasikan ini 
 	virtual void makan()=0;
 	
-	//---membuat path ke target
-	virtual void makepath() = 0;
-	
-	// bersembunyi di benteng kecil ATAU di cangkang utk kasus kura2
-	virtual void sembunyi();
+	// membuat path ke target
+	virtual void makepath(Point&) = 0;
 	
 	// objek turunan herbivora berpindah ke koordinat lain 
 	virtual void bergerak();
@@ -37,7 +36,6 @@ public:
 	virtual int getlapar();
 	
 protected:
-	int mlapar;		// level kelaparan sebuah objek turunan herbivora 
-	int dikejar;	// return 1 jika sedang dikejar karnivora
-	Point target;	// lokasi target yang dituju 
+	int mlapar;			// level kelaparan sebuah objek turunan herbivora 
+	makhluk* dikejar;	// pointer terhadap objek yang mengejar
 };
