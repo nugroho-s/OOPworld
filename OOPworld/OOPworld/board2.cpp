@@ -1,9 +1,7 @@
 #include "board2.h"
-#include <string>
 
 int sizex;
 int sizey;
-int sizepintu_p;
 Point min_h_vertical, min_k_vertical;
 Point max_h_vertical, max_k_vertical;
 Point min_h_horizontal, min_k_horizontal;
@@ -11,9 +9,6 @@ Point max_h_horizontal, max_k_horizontal;
 char** isi;
 Point pintu_u;	// pintu benteng utara 
 Point pintu_s;	// pintu benteng selatan 
-Point* pintu_p;	// pintu benteng perlindungan 
-
-using namespace std;
 
 void board() {
 	
@@ -46,7 +41,7 @@ void board() {
 	string line;
 	string token;
 	if (myfile.is_open()) {
-		getline(myfile,line);
+		getline(myfile, line);
 		stringstream lineStream(line);
 		
 		while (lineStream >> token) {
@@ -66,8 +61,7 @@ void board() {
 		
 		// mengisi array dengan input board 
 		// sekaligus inisiasi posisi pintu masuk/keluar benteng 
-		int c_pjg = 0;
-		int c_ptp = 0;	
+		int c_pjg = 0;	
 		while (getline(myfile, line)) {
 			stringstream lineStream(line);
 			while (lineStream >> token) {
@@ -77,26 +71,11 @@ void board() {
 						pintu_u.set(i, c_pjg);
 					} else if (token[i] == 'y') { // lokasi pintu_s 
 						pintu_s.set(i, c_pjg);
-					} else if (token[i] == 'q') { // lokasi pintu_p 
-						c_ptp++;
-					}
+					} 
 				}
 				c_pjg++;
 			}
 		}
-		
-		// inisiasi posisi pintu_p yang berjumlah c_ptp 
-		pintu_p = new Point[c_ptp];
-		counter = 0;
-		for (int i = 0; i < sizey; i++) {
-			for (int j = 0; j < sizex; j++) {
-				if (isi[i][j] == 'q') {
-					pintu_p[counter].set(j, i);
-					counter++;
-				}
-			}
-		}
-		sizepintu_p = c_ptp;
 		
 		// inisiasi nilai min_h dan max_h utk herbivora 
 		int px, py;
@@ -241,7 +220,4 @@ void deallocate_board() {
     delete[] isi;
 	isi = 0;
 	std::cout << "dealokasi board" << std::endl;
-	// dealokasi array pintu_p 
-	delete[] pintu_p;
-	std::cout << "dealokasi pintu_p" << std::endl;
 }
