@@ -10,7 +10,7 @@ makhluk::makhluk() {
 	// default constructor 
 }
 
-makhluk::makhluk(int ID, char** bid, char jenis_obj, Point min_h_v, Point max_h_v, Point min_h_h, Point max_h_h) {
+makhluk::makhluk(char** bid, char jenis_obj, Point min_h_v, Point max_h_v, Point min_h_h, Point max_h_h) {
 	// konstruktor
 	// inisiasi nilai koordinat awal objek (x, y) dengan nilai random 
 	int found = 0, x, y;
@@ -25,7 +25,7 @@ makhluk::makhluk(int ID, char** bid, char jenis_obj, Point min_h_v, Point max_h_
 	P.set(x, y);
 	
 	// inisiasi atribut id 
-	id = ID;
+	id = jenis_obj;
 	// inisiasi nilai arah gerak awal objek dengan nilai random (0 - 7)
 	arah = rand() % 8;
 }
@@ -74,6 +74,11 @@ void makhluk::bergerak() {
 Point makhluk::getlok() { 
 	// mengembalikan posisi (x, y) objek di bidang 
 	return P; 
+}
+
+Point makhluk::gettarget() {
+	// mengembalikan posisi target (x, y) di bidang 
+	return target;
 }
 
 int makhluk::getid() {
