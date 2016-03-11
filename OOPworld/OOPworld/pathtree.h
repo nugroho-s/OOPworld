@@ -1,10 +1,10 @@
-#include "board2.h"
+#include "board.h"
 #include "Point.h"
 
 #ifndef paththree_h
 #define paththree_h 
 
-extern int** status;
+extern int** stat;
 	//menyimpan nilai 1 atau 0 yang menyatakan apakah sebuah point di board sudah pernah 
 	//dialokasikan sebagai node pada tree 
 extern Point* ptree;
@@ -70,7 +70,7 @@ Node* SearchNode(Node*, Point&);
 	//mencari address node yang punya nilai Point sama dengan ptree ke idx_ptree
 Node* Tree(int, int*, int*);
 	//menghasilkan PathTree dengan child dan parent node sudah dialokasikan 
-void MakeTree(int, int, int);
+void MakeTree(int, int, int, Point&);
 	//men-generate semua child node untuk sebuah node (yang nanti akan menjadi parent node) 
 
 #endif
