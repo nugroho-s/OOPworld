@@ -6,7 +6,7 @@
 #include <unistd.h>
 #include <fstream>
 
-#include <Windows.h>
+//#include <Windows.h>
 
 mutex mu;
 

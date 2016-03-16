@@ -23,7 +23,7 @@ void karnivora::lihat(Point& _target) {
 	if (_getarah == 0) {
 		// mendeteksi sepanjang garis timur 
 		while (IndexX < sizex) {
-			point_in_while(temp, IndexX, IndexY, _getarah());
+			point_in_while(temp, IndexX, IndexY, _getarah);
 			if (temp.getX() == -2 && temp.getY() == -2) {
 				//normal return, lanjutkan while loop 
 				IndexX++;
@@ -37,7 +37,7 @@ void karnivora::lihat(Point& _target) {
 	} else if (_getarah == 1) {
 		// mendeteksi sepanjang garis tenggara 
 		while (IndexX < sizex && IndexY < sizey) {
-			point_in_while(temp, IndexX, IndexY, _getarah());
+			point_in_while(temp, IndexX, IndexY, _getarah);
 			if (temp.getX() == -2 && temp.getY() == -2) {
 				//normal return, lanjutkan while loop 
 				IndexX++; IndexY++;
@@ -51,7 +51,7 @@ void karnivora::lihat(Point& _target) {
 	} else if (_getarah == 2) {
 		// mendeteksi sepanjang garis selatan
 		while (IndexY < sizey) {
-			point_in_while(temp, IndexX, IndexY, _getarah());
+			point_in_while(temp, IndexX, IndexY, _getarah);
 			if (temp.getX() == -2 && temp.getY() == -2) {
 				//normal return, lanjutkan while loop 
 				IndexY++;
@@ -65,7 +65,7 @@ void karnivora::lihat(Point& _target) {
 	} else if (_getarah == 3) {
 		// mendeteksi sepanjang garis barat daya 
 		while (IndexX >= 0 && IndexY < sizey) {
-			point_in_while(temp, IndexX, IndexY, _getarah());
+			point_in_while(temp, IndexX, IndexY, _getarah);
 			if (temp.getX() == -2 && temp.getY() == -2) {
 				//normal return, lanjutkan while loop 
 				IndexX--; IndexY++;
@@ -79,7 +79,7 @@ void karnivora::lihat(Point& _target) {
 	} else if (_getarah == 4) {
 		// mendeteksi sepanjang garis barat 
 		while (IndexX >= 0) {
-			point_in_while(temp, IndexX, IndexY, _getarah());
+			point_in_while(temp, IndexX, IndexY, _getarah);
 			if (temp.getX() == -2 && temp.getY() == -2) {
 				//normal return, lanjutkan while loop 
 				IndexX--;
@@ -93,7 +93,7 @@ void karnivora::lihat(Point& _target) {
 	} else if (_getarah == 5) {
 		// mendeteksi sepanjang garis barat laut 
 		while (IndexX >= 0 && IndexY >= 0) {
-			point_in_while(temp, IndexX, IndexY, _getarah());
+			point_in_while(temp, IndexX, IndexY, _getarah);
 			if (temp.getX() == -2 && temp.getY() == -2) {
 				//normal return, lanjutkan while loop 
 				IndexX--; IndexY--;
@@ -107,7 +107,7 @@ void karnivora::lihat(Point& _target) {
 	} else if (_getarah == 6) {
 		// mendeteksi sepanjang utara tenggara 
 		while (IndexY >= 0) {
-			point_in_while(temp, IndexX, IndexY, _getarah());
+			point_in_while(temp, IndexX, IndexY, _getarah);
 			if (temp.getX() == -2 && temp.getY() == -2) {
 				//normal return, lanjutkan while loop 
 				IndexY--;
@@ -121,7 +121,7 @@ void karnivora::lihat(Point& _target) {
 	} else if (_getarah == 7) {
 		// mendeteksi sepanjang garis timur laut  
 		while (IndexX < sizex && IndexY >= 0) {
-			point_in_while(temp, IndexX, IndexY, _getarah());
+			point_in_while(temp, IndexX, IndexY, _getarah);
 			if (temp.getX() == -2 && temp.getY() == -2) {
 				//normal return, lanjutkan while loop 
 				IndexX++; IndexY--;
