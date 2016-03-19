@@ -48,7 +48,7 @@ int main() {
 	
 	
 	//ALGORITMA
-	
+	srand(time(NULL));
 	/** Board **/
 	// menciptakan board 
 	board();
@@ -70,6 +70,7 @@ int main() {
 	
 	mptr[0] = new zebra(min_h_vertical, max_h_vertical, min_h_horizontal, max_h_horizontal);
 	tambah(*mptr[0], 'Z');
+	cout << "mulai alokasi singa" << endl;
 	mptr[1] = new singa(min_k_vertical, max_k_vertical, min_k_horizontal, max_k_horizontal);
 	tambah(*mptr[1], 'S');
 	

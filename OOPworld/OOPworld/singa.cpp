@@ -8,6 +8,7 @@ singa::singa(Point& p1, Point& p2, Point& p3, Point& p4) : karnivora(p1, p2, p3,
 	arah = 0;
 	mengejar = NULL;		// belum ada objek yang sedang dikejar
 	target.set(-1, -1);	
+	printf("selesai alokasi s\n");
 }
 
 singa::singa(singa& s) {

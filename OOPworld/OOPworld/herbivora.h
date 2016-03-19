@@ -35,6 +35,9 @@ public:
 	// mendapatkan level kelaparan sebuah objek turunan herbivora  
 	virtual int getlapar();
 	
+	// print status makhluk
+	void printstatmakhluk();
+	
 protected:
 	int mlapar;			// level kelaparan sebuah objek turunan herbivora 
 	makhluk* dikejar;	// pointer terhadap objek yang mengejar

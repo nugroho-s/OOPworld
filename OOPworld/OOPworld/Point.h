@@ -22,6 +22,8 @@ class Point {
 		// memindahkan posisi (x, y) objek ke x+dx dan y+dy 
 		void move (int dx, int dy);
 		
+		void printp();
+		
       private:
 		// koordinat objek di bidang
         int x;

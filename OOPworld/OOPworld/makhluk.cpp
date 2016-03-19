@@ -11,23 +11,29 @@ makhluk::makhluk() {
 }
 
 makhluk::makhluk(char** bid, char jenis_obj, Point min_h_v, Point max_h_v, Point min_h_h, Point max_h_h) {
+	printf("ctor makhluk\n");
 	// konstruktor
 	// inisiasi nilai koordinat awal objek (x, y) dengan nilai random 
 	int found = 0, x, y;
+	jenis_obj = 'h';
+	printf("%c\n",jenis_obj);
 	while (found == 0) {
 		// random nilai (x,y) dan cek apakah lokasi objek sudah tepat di spawn nya  
 		x = rand() % (max_h_v.getX()+1-min_h_v.getX()) + min_h_v.getX(); 
 		y = rand() % (max_h_h.getY()+1-min_h_h.getY()) + min_h_h.getY();
+		printf("%d,%d\n",x,y);
 		if (bid[x][y] == jenis_obj) {
 			found = 1;
 		}
 	}
+	//! ga keluar dari sini!!!
 	P.set(x, y);
 	
 	// inisiasi atribut id 
 	id = jenis_obj;
 	// inisiasi nilai arah gerak awal objek dengan nilai random (0 - 7)
 	arah = rand() % 8;
+	printf("ctor makhluk selesai\n");
 }
 
 makhluk::~makhluk() {

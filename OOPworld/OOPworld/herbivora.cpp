@@ -25,3 +25,8 @@ int herbivora::getlapar() {
 	// mengembalikan level kelaparan sebuah objek herbivora 
 	return mlapar;
 }
+
+void herbivora::printstatmakhluk() {
+	makhluk::printstatmakhluk();
+	printf("tingkat kelaparan = %d\n", mlapar);
+}

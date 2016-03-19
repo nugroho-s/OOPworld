@@ -191,6 +191,7 @@ void printboard() {
 void tambah(makhluk& m, char ch) {
 	Point P = m.getlok();
 	isi[P.getY()][P.getX()] = ch;
+	m.printstatmakhluk();
 }
 
 void move(makhluk& m, char ch) {

@@ -16,7 +16,7 @@ FILE = board2.cpp driver2.cpp herbivora.cpp karnivora.cpp list.cpp makhluk.cpp p
 CEKVER = board2.cpp board2.h driver2.cpp herbivora.cpp karnivora.cpp list.cpp list.h makhluk.cpp makhluk.h pathtree.cpp pathtree.h Point.cpp Point.h singa.cpp singa.h zebra.cpp zebra.h board.cpp board.h
 
 $(TARGET): $(CEKVER)
-	$(CC) $(CFLAGS) -o $(TARGET) $(FILE)
+	$(CC) $(CFLAGS) -o $(TARGET) $(FILE) -Wcomment -Wunused-variable
 
 clean:
 	$(RM) $(TARGET)
