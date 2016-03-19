@@ -153,8 +153,8 @@ void min_h_hor(char jns_obj, int* x, int* y) {
 			break;
 		}
 	}
-	*x = i;
-	*y = j;
+	*x = j;
+	*y = i;
 }
 
 void max_h_hor(char jns_obj, int* x, int* y) {
@@ -170,8 +170,8 @@ void max_h_hor(char jns_obj, int* x, int* y) {
 			break;
 		}
 	}
-	*x = i;
-	*y = j;
+	*x = j;
+	*y = i;
 }
 
 void printboard() {

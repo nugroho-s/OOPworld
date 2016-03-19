@@ -67,7 +67,10 @@ int main() {
 	string jenisherbivora = "zebra", jeniskarnivora = "singa";
 	int bnykobj = 2;
 	makhluk* mptr[bnykobj];
-	
+	max_k_horizontal.printp();
+	max_k_vertical.printp();
+	min_k_horizontal.printp();
+	min_k_vertical.printp();
 	mptr[0] = new zebra(min_h_vertical, max_h_vertical, min_h_horizontal, max_h_horizontal);
 	tambah(*mptr[0], 'Z');
 	cout << "mulai alokasi singa" << endl;
@@ -103,9 +106,7 @@ int main() {
 			} 
 		}
 		
-		// menggerakkan objek satu-satu  
-		
-		
+		// menggerakkan objek satu-satu  		
 		dunia_on = 0;
 	}
 	

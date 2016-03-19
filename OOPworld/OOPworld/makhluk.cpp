@@ -15,14 +15,17 @@ makhluk::makhluk(char** bid, char jenis_obj, Point min_h_v, Point max_h_v, Point
 	// konstruktor
 	// inisiasi nilai koordinat awal objek (x, y) dengan nilai random 
 	int found = 0, x, y;
-	jenis_obj = 'h';
 	printf("%c\n",jenis_obj);
 	while (found == 0) {
 		// random nilai (x,y) dan cek apakah lokasi objek sudah tepat di spawn nya  
-		x = rand() % (max_h_v.getX()+1-min_h_v.getX()) + min_h_v.getX(); 
-		y = rand() % (max_h_h.getY()+1-min_h_h.getY()) + min_h_h.getY();
+		printf("%d\n",((max_h_v.getX()+1-min_h_v.getX()) + min_h_v.getX()));
+		printf("%d\n",((max_h_h.getY()+1-min_h_h.getY()) + min_h_h.getY()));
+		x = rand() % ((max_h_v.getX()+1-min_h_v.getX()) + min_h_v.getX()); 
+		y = rand() % ((max_h_h.getY()+1-min_h_h.getY()) + min_h_h.getY());
+		//x = rand() % 5;
+		//y = rand() % 6;
 		printf("%d,%d\n",x,y);
-		if (bid[x][y] == jenis_obj) {
+		if (bid[y][x] == jenis_obj) {
 			found = 1;
 		}
 	}
